@@ -11,7 +11,20 @@ import SwiftUI
 struct NavBarLogoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                TabView {
+                    Text("Screen One")
+                        .tabItem({ Text("One") })
+                    Text("Screen Two")
+                        .tabItem({ Text("Two") })
+                    Text("Screen Three")
+                        .tabItem({ Text("Three") })
+                }.toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Image(systemName: "house.fill")
+                    }
+                }
+            }
         }
     }
 }
